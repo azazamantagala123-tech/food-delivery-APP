@@ -1,0 +1,132 @@
+/* ==================== MAIN CONTENT ==================== */
+
+.admin-main-content {
+  position: absolute;
+  top: 60px;
+  left: 260px;
+  right: 0;
+  min-height: calc(100vh - 60px);
+  padding: 24px;
+  background: #f8f9fa;
+  transition: left 0.3s ease;
+}
+
+/* When sidebar is collapsed */
+.admin-sidebar-modern.collapsed ~ .admin-main-content {
+  left: 70px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .admin-main-content {
+    left: 0;
+    top: 60px;
+  }
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: white;
+}
+
+.stat-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.stat-info p {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Recent Orders */
+.recent-orders {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.recent-orders h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.order-status.pending { background: #fef3c7; color: #92400e; }
+.order-status.delivered { background: #d1fae5; color: #065f46; }
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.logout-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}

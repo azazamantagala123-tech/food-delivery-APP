@@ -1,0 +1,206 @@
+/* Error.css */
+
+.error-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.error-card {
+  background: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.error-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Error Details */
+.error-details {
+  margin: 20px 0;
+  text-align: left;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.error-details details {
+  padding: 12px;
+}
+
+.error-details summary {
+  cursor: pointer;
+  color: #ff6b35;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.error-details pre {
+  margin-top: 10px;
+  padding: 10px;
+  background: #1a1a2e;
+  color: #00ff9d;
+  border-radius: 6px;
+  font-size: 11px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+/* Action Buttons */
+.error-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.error-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.error-btn.primary {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.error-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.error-btn.secondary {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.error-btn.secondary:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+/* Help Section */
+.error-help {
+  border-top: 1px solid #e9ecef;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.error-help p {
+  font-size: 13px;
+  color: #999;
+}
+
+.error-help a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.error-help a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .error-card {
+    padding: 30px 20px;
+  }
+  
+  .error-icon {
+    font-size: 60px;
+  }
+  
+  .error-title {
+    font-size: 24px;
+  }
+  
+  .error-message {
+    font-size: 14px;
+  }
+  
+  .error-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  
+  .error-actions {
+    gap: 10px;
+  }
+}
+
+/* Loading State inside Error */
+.error-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.error-loading .spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e9ecef;
+  border-top-color: #ff6b35;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

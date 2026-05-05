@@ -1,0 +1,443 @@
+/* Add these styles to your existing OrderCard.css */
+
+/* Quick Next Button */
+.quick-next-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.quick-next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* Order ID Wrapper */
+.order-id-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f8f9fa;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.order-id-icon {
+    font-size: 14px;
+}
+
+/* Relative Time */
+.order-relative-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #6c757d;
+    background: #f8f9fa;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* Rush Badge */
+.rush-badge {
+    background: #dc3545;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    animation: pulse-red 1s infinite;
+}
+
+@keyframes pulse-red {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Customer Email */
+.customer-email {
+    display: block;
+    font-size: 11px;
+    color: #6c757d;
+    margin-top: 2px;
+}
+
+.info-icon {
+    margin-right: 4px;
+    font-size: 10px;
+}
+
+/* Summary Cards */
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+    background: #fff3e6;
+    transform: translateY(-2px);
+}
+
+.summary-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.summary-label {
+    font-size: 10px;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+
+/* Address Section */
+.address-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.address-text strong {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.address-text span {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.item-count {
+    background: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.section-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Item Note */
+.item-note {
+    cursor: help;
+    font-size: 12px;
+    margin-left: 6px;
+    opacity: 0.7;
+}
+
+.item-price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.item-total {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ff6b35;
+}
+
+/* Timeline Current Item */
+.timeline-item.current .timeline-dot {
+    background: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    animation: pulse-orange 1.5s infinite;
+}
+
+@keyframes pulse-orange {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.timeline-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-icon {
+    font-size: 14px;
+}
+
+/* Special Instructions Section */
+.special-instructions {
+    background: #fff8e1;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.special-instructions p {
+    margin: 0;
+    font-size: 13px;
+    color: #856404;
+    line-height: 1.5;
+}
+
+/* Details Footer */
+.details-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e9ecef;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.detail-label {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.detail-value {
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.payment-status.paid {
+    color: #28a745;
+}
+
+.payment-status.pending {
+    color: #ffc107;
+}
+
+.coupon-code {
+    background: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-family: monospace;
+    font-size: 11px;
+}
+
+/* Action Buttons Redesign */
+.order-card-actions {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn .btn-icon {
+    font-size: 14px;
+}
+
+.details-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.details-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.update-btn {
+    background: #17a2b8;
+    color: white;
+}
+
+.update-btn:hover {
+    background: #138496;
+    transform: translateY(-2px);
+}
+
+.assign-btn {
+    background: #28a745;
+    color: white;
+}
+
+.assign-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.view-btn {
+    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    color: white;
+}
+
+.view-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+/* Modal Improvements */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-icon {
+    font-size: 24px;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: all 0.3s;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    background: #f8f9fa;
+    color: #dc3545;
+}
+
+.remarks-textarea,
+.delivery-select,
+.status-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.remarks-textarea:focus,
+.delivery-select:focus,
+.status-select:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.error-hint {
+    font-size: 11px;
+    color: #dc3545;
+    margin-top: 8px;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .order-info {
+        flex-wrap: wrap;
+    }
+    
+    .summary-card {
+        min-width: calc(50% - 8px);
+    }
+    
+    .order-summary {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .action-btn span:last-child {
+        display: none;
+    }
+    
+    .action-btn {
+        min-width: 50px;
+    }
+    
+    .action-btn .btn-icon {
+        font-size: 18px;
+        margin: 0;
+    }
+    
+    .details-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .order-badges {
+        flex-wrap: wrap;
+    }
+    
+    .order-summary {
+        grid-template-columns: 1fr;
+    }
+}

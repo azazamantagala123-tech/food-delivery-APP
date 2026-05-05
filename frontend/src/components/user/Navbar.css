@@ -1,0 +1,147 @@
+.user-navbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.user-navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.user-navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.user-navbar .nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.user-navbar .nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.user-navbar .nav-links a:hover {
+  color: #ff6b35;
+  transform: translateY(-2px);
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.profile-link:hover {
+  background: rgba(255, 107, 53, 0.2);
+}
+
+.user-avatar-small {
+  width: 30px;
+  height: 30px;
+  background: #ff6b35;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cart-link {
+  position: relative;
+  font-size: 20px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  background: #ff6b35;
+  color: white;
+  border-radius: 30px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 18px;
+  text-align: center;
+}
+
+.logout-btn {
+  background: rgba(220, 53, 69, 0.2);
+  border: 1px solid rgba(220, 53, 69, 0.5);
+  color: #ff6b35;
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 53, 69, 0.4);
+  transform: translateY(-2px);
+}
+.user-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .user-navbar .nav-links {
+    display: none;
+  }
+  
+  .user-navbar .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-name {
+    display: none;
+  }
+  
+  .profile-link {
+    padding: 6px 10px;
+  }
+}

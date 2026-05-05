@@ -1,0 +1,274 @@
+/* Modal.css */
+
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Container */
+.modal-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Sizes */
+.modal-small {
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-medium {
+  width: 90%;
+  max-width: 600px;
+}
+
+.modal-large {
+  width: 90%;
+  max-width: 800px;
+}
+
+.modal-full {
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+  transition: all 0.3s;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modal-close:hover {
+  background: #f0f0f0;
+  color: #dc3545;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e9ecef;
+  background: #fafbfc;
+  border-radius: 0 0 16px 16px;
+}
+
+/* Modal Buttons */
+.modal-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-btn.primary {
+  background: #ff6b35;
+  color: white;
+}
+
+.modal-btn.primary:hover {
+  background: #e55a2b;
+  transform: translateY(-1px);
+}
+
+.modal-btn.secondary {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.modal-btn.secondary:hover {
+  background: #e0e0e0;
+}
+
+.modal-btn.danger {
+  background: #dc3545;
+  color: white;
+}
+
+.modal-btn.danger:hover {
+  background: #c82333;
+}
+
+.modal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Button Spinner */
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal Message */
+.modal-message {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Alert Modal */
+.alert-modal {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.alert-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.alert-message {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.alert-success .alert-icon {
+  color: #28a745;
+}
+
+.alert-error .alert-icon {
+  color: #dc3545;
+}
+
+.alert-warning .alert-icon {
+  color: #ffc107;
+}
+
+.alert-info .alert-icon {
+  color: #17a2b8;
+}
+
+/* Image Modal */
+.image-modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-header {
+    padding: 16px 20px;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+  }
+  
+  .modal-body {
+    padding: 16px 20px;
+  }
+  
+  .modal-footer {
+    padding: 12px 20px;
+  }
+  
+  .modal-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  
+  .modal-small,
+  .modal-medium,
+  .modal-large,
+  .modal-full {
+    width: 95%;
+    max-height: 85vh;
+  }
+}

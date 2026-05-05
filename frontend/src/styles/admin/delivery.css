@@ -1,0 +1,216 @@
+/* ============================================================
+   DELIVERY MANAGEMENT - Admin Delivery Boys Styles
+   ============================================================ */
+
+.delivery-container {
+  padding: 20px;
+}
+
+.delivery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.delivery-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+/* Delivery Table */
+.delivery-table-container {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  overflow-x: auto;
+}
+
+.delivery-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.delivery-table th {
+  padding: 14px 16px;
+  background: var(--gray-50);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.delivery-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 14px;
+}
+
+/* KYC Status */
+.kyc-status {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kyc-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.kyc-badge.approved {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.kyc-badge.pending {
+  background: var(--warning-light);
+  color: #856404;
+}
+
+.kyc-badge.rejected {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.kyc-badge.not-uploaded {
+  background: var(--gray-200);
+  color: var(--gray-600);
+}
+
+.kyc-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.kyc-approve {
+  background: var(--success);
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.kyc-reject {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* Online Status */
+.online-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.online-status.online {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.online-status.offline {
+  background: var(--gray-200);
+  color: var(--gray-600);
+}
+
+.online-status.break {
+  background: var(--warning-light);
+  color: #856404;
+}
+
+/* Delivery Card View */
+.delivery-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.delivery-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid var(--gray-200);
+  flex-wrap: wrap;
+}
+
+.delivery-avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+.delivery-info h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.delivery-info p {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.delivery-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px;
+  background: var(--gray-50);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-item .label {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .delivery-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .delivery-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .delivery-card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,49 @@
+/* Add this at the end of your global.css file */
+
+/* 404 Page */
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+}
+
+.not-found h1 {
+  font-size: 120px;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+}
+
+.not-found h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.not-found .btn-primary {
+  background: white;
+  color: #ff6b35;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.not-found .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.user-home {
+  margin-top: 70px;
+}

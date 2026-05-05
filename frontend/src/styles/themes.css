@@ -1,0 +1,89 @@
+/* themes.css - Light & Dark Theme Variables */
+
+:root {
+  /* Light Theme (Default) */
+  --primary-color: #ff6b35;
+  --secondary-color: #ff8c42;
+  --background-color: #ffffff;
+  --surface-color: #f8f9fa;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --border-color: #e9ecef;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --base-font-size: 16px;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --background-color: #1a1a2e;
+  --surface-color: #16213e;
+  --text-color: #ffffff;
+  --text-secondary: #aaaaaa;
+  --border-color: #2d2d3d;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply to body */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--base-font-size);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-color);
+  transform: scale(1.05);
+}
+
+/* Primary Color Classes */
+.color-orange { --primary-color: #ff6b35; }
+.color-blue { --primary-color: #007bff; }
+.color-green { --primary-color: #28a745; }
+.color-red { --primary-color: #dc3545; }
+.color-purple { --primary-color: #6f42c1; }
+.color-coral { --primary-color: #fd7e14; }
+.color-teal { --primary-color: #20c997; }
+.color-pink { --primary-color: #e83e8c; }
+
+/* Buttons with primary color */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black);
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--primary-color) 80%, black);
+}

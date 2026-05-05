@@ -1,0 +1,109 @@
+    .food-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .food-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .food-image {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .food-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .veg-badge, .nonveg-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: white;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff4444;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-info h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+    }
+
+    .food-description {
+      color: #666;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .food-rating {
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      color: #ff9800;
+      font-weight: 500;
+    }
+
+    .reviews {
+      color: #999;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .food-price {
+      margin-bottom: 12px;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .discounted-price, .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff6b35;
+    }
+
+    .add-to-cart {
+      width: 100%;
+      background: #ff6b35;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background: #e55a2b;
+    }

@@ -1,0 +1,218 @@
+/* ============================================================
+   CATEGORIES MANAGEMENT - Admin Categories Styles
+   Professional, Modern, Responsive
+   ============================================================ */
+
+.categories-container {
+  padding: 20px;
+}
+
+/* Header */
+.categories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.categories-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.categories-header p {
+  color: var(--gray-500);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Categories Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Category Card */
+.category-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-border);
+}
+
+.category-image {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.05);
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+.category-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.category-content {
+  padding: 16px;
+}
+
+.category-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-desc {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.category-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.sort-order {
+  font-size: 12px;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* Categories Table View */
+.categories-table-container {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  overflow-x: auto;
+}
+
+.categories-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.categories-table th {
+  padding: 14px 16px;
+  background: var(--gray-50);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.categories-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.category-thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.no-image {
+  color: var(--gray-400);
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Status Toggle */
+.status-toggle {
+  width: 44px;
+  height: 24px;
+  background: var(--gray-300);
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.status-toggle.active {
+  background: var(--success);
+}
+
+.status-toggle::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all var(--transition);
+}
+
+.status-toggle.active::after {
+  left: 22px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .categories-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
