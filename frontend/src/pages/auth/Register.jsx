@@ -52,6 +52,7 @@ const EyeIcon = ({ show }) => (
 )
 
 const Register = () => {
+  // State management
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -61,9 +62,11 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [agreeTerms, setAgreeTerms] = useState(false)
+  
   const { register } = useAuth()
   const navigate = useNavigate()
 
+  // Form validation function
   const validateForm = () => {
     if (!name.trim()) {
       toast.error('Please enter your full name')
@@ -109,6 +112,7 @@ const Register = () => {
     return true
   }
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
     
@@ -116,19 +120,28 @@ const Register = () => {
     
     setLoading(true)
     
-    // Role is always 'user' for public registration
-    const result = await register({ name, email, password, phone }, 'user')
-    
-    if (result.success) {
-      toast.success('Registration successful! Please login.')
-      setTimeout(() => {
-        navigate('/login')
-      }, 1500)
-    } else {
-      toast.error(result.message || 'Registration failed. Please try again.')
+    try {
+      console.log('Submitting registration form...', { name, email, phone })
+      
+      // Call register API from auth context
+      const result = await register({ name, email, password, phone }, 'user')
+      
+      console.log('Registration result:', result)
+      
+      if (result.success) {
+        toast.success('Registration successful! Please login.')
+        setTimeout(() => {
+          navigate('/login')
+        }, 1500)
+      } else {
+        toast.error(result.message || 'Registration failed. Please try again.')
+      }
+    } catch (error) {
+      console.error('Registration error:', error)
+      toast.error(error.message || 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
     }
-    
-    setLoading(false)
   }
 
   return (
@@ -149,7 +162,7 @@ const Register = () => {
           </div>
 
           <form onSubmit={handleSubmit}>
-            {/* Full Name */}
+            {/* Full Name Field */}
             <div className="form-group">
               <label htmlFor="name">Full name</label>
               <div className="input-wrapper">
@@ -168,7 +181,7 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Email */}
+            {/* Email Field */}
             <div className="form-group">
               <label htmlFor="email">Email address</label>
               <div className="input-wrapper">
@@ -186,7 +199,7 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Password */}
+            {/* Password Field */}
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <div className="input-wrapper">
@@ -213,7 +226,7 @@ const Register = () => {
               <p className="password-hint">✓ Must be at least 6 characters</p>
             </div>
 
-            {/* Confirm Password */}
+            {/* Confirm Password Field */}
             <div className="form-group">
               <label htmlFor="confirmPassword">Confirm password</label>
               <div className="input-wrapper">
@@ -239,7 +252,7 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Phone Number */}
+            {/* Phone Number Field - Optional */}
             <div className="form-group">
               <label htmlFor="phone">Phone number (optional)</label>
               <div className="input-wrapper">
@@ -256,7 +269,7 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Terms & Conditions */}
+            {/* Terms and Conditions Checkbox */}
             <div className="terms-group">
               <label className="checkbox-label">
                 <input 
@@ -291,7 +304,7 @@ const Register = () => {
             </p>
           </div>
 
-          {/* Note for users about delivery partner registration */}
+          {/* Note about delivery partner registration */}
           <div className="register-note">
             <p className="note-text">
               📝 <strong>Note:</strong> Delivery partner accounts can only be created by admin.

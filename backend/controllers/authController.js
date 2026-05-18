@@ -32,7 +32,7 @@ exports.register = async (req, res) => {
             password: hashed,
             phone: phone || "",
             role: "user",
-            referralCode: referralCode,  // ← Add referral code
+            referralCode: referralCode,  // ← Add referral codezz
             rewardPoints: 0,
             isEmailVerified: true
         });

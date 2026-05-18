@@ -1,20 +1,20 @@
 import React from 'react'
-import AdminSidebar from '../components/admin/AdminSidebar'
-import AdminHeader from '../components/admin/AdminHeader'
+import { Outlet } from 'react-router-dom'
+import UserNavbar from '../components/user/Navbar'
 
-const AdminLayout = ({ children }) => {
+const UserLayout = () => {
   return (
-    <div className="admin-layout">
-      <AdminSidebar />
-
-      <div className="main-area">
-        <AdminHeader />
-        <div className="admin-main-content">
-          {children}
-        </div>
+    <>
+      <UserNavbar />
+      <div style={{ 
+        paddingTop: '76px',
+        minHeight: '100vh',
+        background: '#0d0d12'
+      }}>
+        <Outlet />
       </div>
-    </div>
+    </>
   )
 }
 
-export default AdminLayout
+export default UserLayout

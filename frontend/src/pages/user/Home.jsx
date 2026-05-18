@@ -173,6 +173,9 @@ const SkeletonCard = () => (
 
 // ==================== Main UserHome ====================
 const UserHome = () => {
+
+
+  
   const [foods, setFoods] = useState([])
   const [popularFoods, setPopularFoods] = useState([])
   const [trendingFoods, setTrendingFoods] = useState([])

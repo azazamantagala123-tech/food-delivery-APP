@@ -120,7 +120,7 @@ const Orders = () => {
 
   if (loading) {
     return (
-      <div className="orders-loading">
+      <div className="orders-loading" style={{ paddingTop: '80px' }}>
         <div className="loading-spinner-gold"></div>
         <p>Loading your orders...</p>
       </div>
@@ -128,7 +128,7 @@ const Orders = () => {
   }
 
   return (
-    <div className="orders-container">
+    <div className="orders-container" style={{ paddingTop: '80px' }}>
       <div className="container">
 
         {/* Header */}
@@ -169,7 +169,7 @@ const Orders = () => {
             <div className="no-orders-icon">📦</div>
             <h3>No orders found</h3>
             <p>Looks like you haven't placed any orders yet</p>
-            <button className="btn-shop-now" onClick={() => window.location.href = '/'}>
+            <button className="btn-shop-now" onClick={() => window.location.href = '/home'}>
               Start Shopping →
             </button>
           </div>

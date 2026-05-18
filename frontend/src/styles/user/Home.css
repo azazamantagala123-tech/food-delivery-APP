@@ -51,7 +51,6 @@ body {
 .user-home {
   background: var(--clr-bg);
   min-height: 100vh;
-  padding-top: 80px;
 }
 
 /* ================================================================
@@ -216,8 +215,9 @@ body {
   outline: none;
   font-family: var(--font-body);
   font-size: 15px;
+  margin-right:170px ;
   color: var(--clr-text);
-  padding: 12px 0;
+  padding: 6px 6px 6px 37px;
 }
 
 .search-bar input::placeholder {

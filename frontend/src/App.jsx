@@ -20,10 +20,8 @@ import UserWallet from './pages/user/Wallet'
 import UserCheckout from './pages/user/Checkout'
 import FoodDetails from './pages/user/FoodDetails'
 
-// ✅ Admin Layout (NEW)
+// Admin Layout + Pages
 import AdminLayout from './layouts/AdminLayout'
-
-// ✅ Admin Pages (No need header/sidebar in each page now)
 import AdminDashboard from './pages/admin/Dashboard'
 import AdminFoods from './pages/admin/Foods'
 import AdminOrders from './pages/admin/Orders'
@@ -48,7 +46,21 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   const { user, isLoading } = useAuth()
 
   if (isLoading) {
-    return <div className="loading">Loading...</div>
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh',
+        background: '#0d0d12',
+        color: '#f0eff8'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <div className="loading-spinner"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   if (!user) {
@@ -69,7 +81,21 @@ const PublicRoute = ({ children }) => {
   const { user, isLoading } = useAuth()
 
   if (isLoading) {
-    return <div className="loading">Loading...</div>
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh',
+        background: '#0d0d12',
+        color: '#f0eff8'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <div className="loading-spinner"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   if (user) {
@@ -81,7 +107,29 @@ const PublicRoute = ({ children }) => {
   return children
 }
 
-// ==================== App ====================
+// ==================== NotFound Component ====================
+const NotFound = () => (
+  <div style={{ 
+    textAlign: 'center', 
+    padding: '100px',
+    background: '#0d0d12',
+    color: '#f0eff8',
+    minHeight: '100vh'
+  }}>
+    <h1 style={{ fontSize: '48px', marginBottom: '20px' }}>404 - Page Not Found</h1>
+    <p style={{ color: '#9997b3', marginBottom: '30px' }}>The page you're looking for doesn't exist.</p>
+    <a href="/home" style={{
+      background: '#ff6b2b',
+      color: 'white',
+      padding: '12px 24px',
+      borderRadius: '8px',
+      textDecoration: 'none',
+      display: 'inline-block'
+    }}>Go Home</a>
+  </div>
+)
+
+// ==================== App Component ====================
 function App() {
   return (
     <Routes>
@@ -104,7 +152,7 @@ function App() {
         <Route path="/food/:id" element={<FoodDetails />} />
       </Route>
 
-      {/* ================= ADMIN ROUTES (WITH LAYOUT) ================= */}
+      {/* ================= ADMIN ROUTES ================= */}
       <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']}><AdminLayout /></ProtectedRoute>}>
         <Route index element={<AdminDashboard />} />
         <Route path="foods" element={<AdminFoods />} />
@@ -127,17 +175,10 @@ function App() {
         <Route path="support" element={<DeliverySupport />} />
       </Route>
 
-      {/* 404 */}
+      {/* 404 Route */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
-
-const NotFound = () => (
-  <div style={{ textAlign: 'center', padding: '100px' }}>
-    <h1>404 - Page Not Found</h1>
-    <a href="/">Go Home</a>
-  </div>
-)
 
 export default App
